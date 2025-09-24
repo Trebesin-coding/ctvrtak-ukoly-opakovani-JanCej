@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <style>
+        body {
+            padding: 20px;
+        }
+        .ramecek {
+            margin-top: 20px;
+            padding: 15px;
+            width: fit-content;
+        }
+    </style>
+</head>
+<body>
+<h1>Zadej jméno žáka:</h1>
+<input type="text" id="jmenoZaka">
+<button onclick="zkontrolovatZnamku()">zkontrolovat známku</button>
+
+<div class="ramecek"></div>
+
+<script>
+    function zkontrolovatZnamku() {
+        const jmeno = document.getElementById('jmenoZaka').value.trim()
+        const ramecek = document.querySelector('.ramecek')
+        
+        if (jmeno === '') {
+            ramecek.textContent = 'Prosím, zadejte jméno žáka.'
+            return;
+        }
+
+        const znamka = Math.floor(Math.random() * 5) + 1
+
+        ramecek.textContent = `Žák ${jmeno} má známku: ${znamka}, 🌟`
+
+        
+        if (znamka === 1) {
+            document.body.style.backgroundColor = 'blue'
+            
+        }
+        else if (znamka === 2){
+            document.body.style.backgroundColor = 'red'
+        }
+        else if (znamka === 3){
+            document.body.style.backgroundColor = 'pink'
+        }
+        else if (znamka === 4){
+            document.body.style.backgroundColor = 'white'
+        }
+        else if (znamka === 5){
+            document.body.style.backgroundColor = 'green'
+        }
+    }
+</script>
+
+</body>
+</html>
